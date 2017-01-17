@@ -1,0 +1,232 @@
+/* General Styles */
+body {
+  background: #eee;
+  font-family: helvetica;
+}
+
+header {
+  background: #daae7b;
+  color: #eee;
+  font-size: 35px;
+  height: 70px;
+  padding: 15px;
+  text-align: center;
+}
+
+.main-wrapper {
+  margin: 0 auto;
+  padding: 15% 0;
+  text-align: center;
+  width: 85%;
+}
+
+
+/* ********************************** */
+/* Product Item Styles */
+.product-container {
+  display: inline-block;
+  margin: 0 15px 45px 15px;
+  overflow: auto;
+  position: relative;
+  width: 360px;
+}
+
+.img-container {
+  border: 2px solid #4C7D9C;
+  height: 347px;
+  padding: 10px;
+}
+.img-container img {
+  width: 100%;
+}
+.flip-container {
+  border-bottom: 2px solid #4C7D9C;
+  border-left: 2px solid #4C7D9C;
+  padding-right: 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+}
+.flip-container i {
+  color: #71b9e7;
+  padding: 5px;
+}
+.flip-container:hover {
+  background: #71b9e7;
+  border-right: 2px solid #4C7D9C;
+  border-top: 2px solid #4C7D9C;
+}
+.flip-container:hover > i {
+  color: #eee;
+}
+
+/* Product Option Styles */
+.option-container {
+  overflow: hidden;
+}
+.option:first-child {
+  border-left: 2px solid #4C7D9C;
+}
+.option {
+  border-right: 2px solid #4C7D9C;
+  float: left;
+  padding: 15px 0;
+  text-align: center;
+  width: 20%;
+}
+.option i {
+  color: #71b9e7;
+  position: relative;
+}
+.option:last-child {
+  border-right: 2px solid #4C7D9C;
+}
+.option:hover{
+  background: #71b9e7;
+}
+.option:hover > i {
+  color: #eee;
+}
+
+/* Option Submenu Styles and Animations */
+.size-option-container, .color-option-container {
+  background: #eee;
+  border: 2px solid #4C7D9C;
+  bottom: 115px;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  width: 90px;
+}
+
+.sizes:hover > .size-option-container {
+  animation: bounce 1s ease forwards;
+}
+.colors:hover > .color-option-container {
+  animation: bounce 1s ease forwards;
+}
+@keyframes bounce {
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(35px);
+  }
+}
+
+.size-option-container:after, .size-option-container:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.size-option-container:after {
+	border-color: rgba(238, 238, 238, 0);
+	border-top-color: #eee;
+	border-width: 5px;
+	margin-left: -5px;
+}
+.size-option-container:before {
+	border-color: rgba(76, 125, 156, 0);
+	border-top-color: #4C7D9C;
+	border-width: 8px;
+	margin-left: -8px;
+}
+
+/* Box Arrows */
+.color-option-container:after, .color-option-container:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.color-option-container:after {
+	border-color: rgba(238, 238, 238, 0);
+	border-top-color: #eee;
+	border-width: 5px;
+	margin-left: -5px;
+}
+.color-option-container:before {
+	border-color: rgba(76, 125, 156, 0);
+	border-top-color: #4C7D9C;
+	border-width: 8px;
+	margin-left: -8px;
+}
+
+.size-option-container {
+  right: 136px;
+}
+.size-option {
+  height: 50px;
+  padding: 20px 0 20px 0;
+}
+.size-option-container .size-option:first-of-type > .fa {
+  transform: scale(2);
+}
+.size-option-container .size-option:nth-of-type(2) > .fa {
+  transform: scale(1.5);
+}
+.size-option-container .size-option:nth-of-type(3) > .fa {
+  transform: scale(1);
+}
+.size-option-container .size-option:last-of-type > .fa {
+  transform: scale(0.5);
+}
+
+.color-option-container {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  right: 64px;
+}
+.color-option {
+  display: inline-block;
+  padding: 1px 2px 1px 2px;
+}
+.color-option-container .color-option:nth-of-type(2) > .fa {
+  color: #d482aa;
+}
+.color-option-container .color-option:nth-of-type(3) > .fa {
+  color: #daae7b;
+}
+.color-option-container .color-option:last-of-type > .fa {
+  color: #8bb992;
+}
+.product-container:nth-of-type(2) .option:nth-of-type(4) > .fa {
+  color: #d482aa;
+}
+.product-container:nth-of-type(3) .option:nth-of-type(4) > .fa {
+  color: #daae7b;
+}
+
+.color-option:hover, .size-option:hover {
+  background: #ccc;
+}
+
+/* Product Name and Price Styles */
+footer {
+  border-top: 2px solid #4C7D9C;
+  color: #71b9e7;
+  overflow: hidden;
+  padding: 15px 5px 0 5px;
+}
+.product-name {
+  float: left;
+  font-weight: lighter;
+}
+.price {
+  float: right;
+  font-weight: bold;
+}
